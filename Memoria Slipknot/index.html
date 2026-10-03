@@ -1,189 +1,342 @@
-<!-- ... existing code ... -->
-                    <button 
-                        type="submit" 
-                        class="w-full py-2 bg-blood hover:bg-blood-bright transition-colors text-white uppercase font-stencil text-xs tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md"
-                    >
-                        <span>[+] ETCH INTO RECORD</span>
-                    </button>
-                    <button 
-                        type="button" 
-                        id="btn-summon-memory"
-                        class="w-full py-2 bg-neutral-900 border border-blood text-blood hover:bg-blood hover:text-white transition-colors uppercase font-stencil text-xs tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md mt-2"
-                    >
-                        <span>[∆] CONJURE AI FRAGMENT</span>
-                    </button>
-                </form>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoria, Slipknot 2024: Seek and Destroy - Italo's Home</title>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=epq3pw3zQN0D3t-XjOqaeFHDj607TPJMkoPVFrVM8asvB5zaNmmw58X84tHzbsNnAB_KgSc9j9hIYVObK14mpbrONBo3_Vn4iVtfxsmtwMPx0i3aN670XEsymDFUug9RElZAFnwNEvNowwat_xrl0BMlDyETbZJl-MfyXiUlCYFPgdiENvPy1iHAu-RdRl1BT3xqjQkvXeKGGJjXsdDJQH_84MFY8hdWxwrTjHMOCOM-o5eHbzF3mQqQSzg5OTqdDo78P7uujcLVYM96v1h_UKhfyUsfm3uE-4yTVcm0OJHtqu2ibqPBP81aFtkVKVTlutoGdNxrjbtciixaLLFmYA" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jb250cmlidXRpb24udXNlcmNvbnRlbnQuZ29vZ2xlLmNvbS9kb3dubG9hZD9jPUNneGlZWEprWDNOMGIzSmhaMlVTVUJJTmNtVnpjRzl1YzJWZlpHRjBZUm9fQ2pBM05qaGlPRGN4TkRFM05HTm1OVFV6TURBd05qVmpaakJoTlRJMk16aGxaVEE0T0RSaVl6SXlOMkl5WVdVM01UUVNDeElIRUtHeTN2SDBDUmdCJmZpbGVuYW1lPW1lbW9yaWEtc2xpcGtub3QtMjAyNC5odG1sJm9waT0xMDMxMzUwNTA"/><style>
+        :root {
+            --blood-red: #8a0303;
+            --neon-red: #ff003c;
+            --dark-bg: #0a0a0a;
+            --grunge-text: #d3d3d3;
+        }
+        body {
+            background-color: var(--dark-bg);
+            color: var(--grunge-text);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/></svg>');
+        }
+        header {
+            text-align: center;
+            padding: 2rem;
+            border-bottom: 2px dashed #333;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            color: var(--blood-red);
+            text-shadow: 0 0 10px var(--neon-red), 2px 2px 0px #000;
+            letter-spacing: 2px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .main-photo-container {
+            position: relative;
+            max-width: 600px;
+            margin: 2rem auto;
+            border: 10px solid #111;
+            box-shadow: 0 0 20px #000;
+        }
+        .main-photo-container img {
+            width: 100%;
+            display: block;
+        }
+        /* Lipstick marker styles */
+        .lipstick-marker {
+            position: absolute;
+            color: #ff1a1a;
+            font-family: 'Brush Script MT', 'Comic Sans MS', cursive; /* Gritty handwritten look fallback */
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px #000, 0 0 10px #ff0000;
+            z-index: 10;
+        }
+        .cam-guy { 
+            top: 15%; 
+            right: 15%; 
+            transform: rotate(-5deg);
+        }
+        .glasses-guy { 
+            top: 45%; 
+            left: 5%; 
+            transform: rotate(5deg);
+        }
+        .headband-guy { 
+            top: 40%; 
+            right: 10%; 
+            font-size: 1.2rem; 
+            transform: rotate(-3deg); 
+            text-align: center; 
+            width: 160px;
+            background: rgba(0,0,0,0.5); /* slight background to ensure readability over hair */
+            padding: 5px;
+            border-radius: 5px;
+        }
 
-                <!-- Fragment List Container -->
-<!-- ... existing code ... -->
-                    <button id="toggle-bw" class="p-2 border border-neutral-800 bg-neutral-900 text-neutral-300 hover:border-neutral-600 transition-all text-center">
-                        FILM B&W: <span id="bw-status">OFF</span>
-                    </button>
-                </div>
-                
-                <div class="mt-4 pt-3 border-t border-neutral-800">
-                    <button id="btn-scan-artifact" class="w-full py-2 bg-neutral-900 border border-neutral-700 hover:border-blood text-neutral-400 hover:text-blood-bright transition-colors uppercase font-stencil text-xs tracking-wider flex items-center justify-center gap-2 cursor-pointer">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path></svg>
-                        <span>[SCAN NEURAL ARTIFACT]</span>
-                    </button>
-                    <div id="ai-scan-result" class="hidden mt-3 p-3 bg-black border border-blood/40 text-blood-bright font-mono text-[10px] leading-relaxed relative">
-                        <div class="absolute top-0 left-0 w-full h-full bg-blood/5 animate-pulse pointer-events-none"></div>
-                        <span id="ai-scan-text"></span>
-                    </div>
-                </div>
-            </div>
+        /* Demolition Mode (WWII Kodak Filter) */
+        .demolition-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 3rem;
+        }
+        .demo-photo {
+            position: relative;
+            overflow: hidden;
+            border: 5px solid #222;
+        }
+        .demo-photo img {
+            width: 100%;
+            display: block;
+            filter: grayscale(100%) contrast(150%) brightness(90%) sepia(20%);
+        }
+        .demo-photo::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23grain)" opacity="0.3"/></svg>');
+            pointer-events: none;
+        }
+
+        .stencil {
+            position: absolute;
+            font-family: 'Impact', sans-serif;
+            font-size: 3rem;
+            color: rgba(255, 0, 0, 0.8);
+            text-transform: uppercase;
+            border: 3px solid rgba(255, 0, 0, 0.8);
+            padding: 5px;
+            pointer-events: none;
+            z-index: 10;
+            text-shadow: 2px 2px 0px #000;
+        }
+        .seek-stencil { top: 40%; right: 10%; transform: rotate(-10deg); }
+        .destroy-stencil { top: 50%; left: 10%; transform: rotate(15deg); }
+
+        .controls {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        button, input[type="file"]::file-selector-button {
+            background: var(--blood-red);
+            color: #fff;
+            border: 1px solid var(--neon-red);
+            padding: 10px 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        button:hover, input[type="file"]::file-selector-button:hover {
+            background: var(--neon-red);
+            box-shadow: 0 0 10px var(--neon-red);
+        }
+
+        /* Logbook */
+        .logbook {
+            background: #111;
+            border: 1px solid #333;
+            padding: 20px;
+            margin-top: 2rem;
+        }
+        .logbook textarea {
+            width: 100%;
+            background: #000;
+            color: var(--neon-red);
+            border: 1px solid #333;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px;
+            box-sizing: border-box;
+            height: 100px;
+        }
+        
+        /* Audio Visualizer */
+        canvas {
+            width: 100%;
+            height: 100px;
+            background: #050505;
+            border: 1px solid #333;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Memoria, Slipknot 2024: Seek and Destroy - Italo's Home</h1>
+    </header>
+
+    <div class="container">
+        <div class="controls">
+            <button id="start-audio">IGNITE DRONE SYNC</button>
+        </div>
+        
+        <canvas id="oscilloscope"></canvas>
+
+        <div class="main-photo-container">
+            <img src="WhatsApp Image 2026-10-03 at 10.43.25 (3).jpeg" alt="Bathroom mirror checkpoint">
+            <div class="lipstick-marker cam-guy">&lt;- Good man.</div>
+            <div class="lipstick-marker glasses-guy">a hell of a demon A.K.A DESTROY &lt;----</div>
+            <div class="lipstick-marker headband-guy">Another hell of a demon A.K.A SEEK</div>
         </div>
 
-        <div class="lg:col-span-5 flex flex-col gap-6">
-<!-- ... existing code ... -->
-        window.deleteFragment = function(id) {
-            const raw = localStorage.getItem('slipknot_2024_memories');
-            if (!raw) return;
-            let list = JSON.parse(raw);
-            list = list.filter(item => item.id !== id);
-            localStorage.setItem('slipknot_2024_memories', JSON.stringify(list));
-            renderFragments(list);
-        };
+        <div class="logbook">
+            <h2>Memory Fragments & Setlist Logbook</h2>
+            <div id="log-entries"></div>
+            <textarea id="new-log" placeholder="Write your fragment..."></textarea>
+            <button onclick="addLog()">ADD FRAGMENT</button>
+        </div>
 
-        const GEMINI_API_KEY = "";
-        
-        async function fetchWithBackoff(url, options, maxRetries = 3) {
-            let delay = 1000;
-            for (let i = 0; i < maxRetries; i++) {
-                try {
-                    const response = await fetch(url, options);
-                    if (!response.ok) {
-                        if (response.status === 429) {
-                            throw new Error('Rate limited');
-                        }
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return await response.json();
-                } catch (e) {
-                    if (i === maxRetries - 1) throw e;
-                    await new Promise(res => setTimeout(res, delay));
-                    delay *= 2;
-                }
-            }
-        }
+        <div class="controls" style="margin-top: 4rem;">
+            <h2>DEMOLITION MODE</h2>
+            <p>WWII Kodak Tri-X 400 B&W Filter Active.</p>
+            <input type="file" id="image-upload" multiple accept="image/*">
+        </div>
 
-        // Feature 1: Conjure AI Fragment (Text Generation)
-        const btnSummonMemory = document.getElementById('btn-summon-memory');
-        if(btnSummonMemory) {
-            btnSummonMemory.addEventListener('click', async () => {
-                const originalText = btnSummonMemory.innerHTML;
-                btnSummonMemory.innerHTML = '<span class="animate-pulse">[...] COMMUNICATING WITH THE VOID</span>';
-                btnSummonMemory.disabled = true;
+        <div class="demolition-gallery" id="gallery">
+            <div class="demo-photo"><img src="image_2.png" alt="Demo"></div>
+            <div class="demo-photo"><img src="image_3.png" alt="Demo"></div>
+            <div class="demo-photo"><img src="image_4.png" alt="Demo"></div>
+            <div class="demo-photo"><img src="image_5.png" alt="Demo"></div>
+            <div class="demo-photo"><img src="image_6.png" alt="Demo"></div>
+            <div class="demo-photo"><img src="image_7.png" alt="Demo"></div>
+            <div class="demo-photo">
+                <img src="image_8.png" alt="Penultima Foto Seek and Destroy">
+                <div class="stencil destroy-stencil">DESTROY</div>
+                <div class="stencil seek-stencil">SEEK</div>
+            </div>
+            <div class="demo-photo"><img src="image_9.png" alt="Demo"></div>
+        </div>
+    </div>
 
-                try {
-                    const payload = {
-                        contents: [{ parts: [{ text: "Write a 1-sentence gritty, visceral memory fragment from a sweaty, aggressive underground Slipknot house party in 2024. Mention sweat, distortion, the moshpit, or the feeling of chaotic brotherhood. Use callsigns like 'Maggot', 'Operative', or 'Unknown'. No hashtags, no cheerful tone. Pure adrenaline." }] }],
-                        systemInstruction: { parts: [{ text: "You are a chaotic, hardcore metalhead documenting a visceral concert. Keep it dark, industrial, and brief." }] }
-                    };
-                    
-                    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${GEMINI_API_KEY}`;
-                    
-                    const data = await fetchWithBackoff(url, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (data && data.candidates && data.candidates[0].content.parts[0].text) {
-                        const generatedText = data.candidates[0].content.parts[0].text.replace(/"/g, '').trim();
-                        
-                        const dateStr = new Date().toISOString().replace('T', ' ').substring(0, 16);
-                        const raw = localStorage.getItem('slipknot_2024_memories');
-                        const list = raw ? JSON.parse(raw) : [];
-
-                        const newEntry = {
-                            id: Date.now(),
-                            author: "NEURAL ECHO [AI]",
-                            date: dateStr,
-                            content: generatedText
-                        };
-
-                        list.push(newEntry);
-                        localStorage.setItem('slipknot_2024_memories', JSON.stringify(list));
-                        renderFragments(list);
-                    }
-                } catch (err) {
-                    // Fail silently for user but restore button
-                } finally {
-                    btnSummonMemory.innerHTML = originalText;
-                    btnSummonMemory.disabled = false;
-                }
+    <script>
+        // Logbook Persistence
+        function loadLogs() {
+            const logs = JSON.parse(localStorage.getItem('slipknot_logs_new')) || [];
+            const container = document.getElementById('log-entries');
+            container.innerHTML = '';
+            logs.forEach(log => {
+                const div = document.createElement('div');
+                div.style.marginBottom = '1rem';
+                div.style.borderBottom = '1px solid #333';
+                div.style.paddingBottom = '0.5rem';
+                div.innerHTML = `<span style="color:var(--neon-red)">[${log.date}]</span><br/>${log.text}`;
+                container.appendChild(div);
             });
         }
 
-        // Feature 2: Neural Artifact Scan (Image Vision)
-        const btnScanArtifact = document.getElementById('btn-scan-artifact');
-        const aiScanResult = document.getElementById('ai-scan-result');
-        const aiScanText = document.getElementById('ai-scan-text');
-
-        function getBase64Image(imgElement) {
-            try {
-                const canvas = document.createElement("canvas");
-                canvas.width = imgElement.naturalWidth || imgElement.width;
-                canvas.height = imgElement.naturalHeight || imgElement.height;
-                const ctx = canvas.getContext("2d");
-                ctx.drawImage(imgElement, 0, 0);
-                const dataURL = canvas.toDataURL("image/jpeg", 0.8);
-                return dataURL.replace(/^data:image\/(png|jpg|jpeg);base64,/, "");
-            } catch(e) {
-                return null;
-            }
+        function addLog() {
+            const text = document.getElementById('new-log').value;
+            if(!text) return;
+            const logs = JSON.parse(localStorage.getItem('slipknot_logs_new')) || [];
+            logs.push({ date: new Date().toLocaleString(), text: text });
+            localStorage.setItem('slipknot_logs_new', JSON.stringify(logs));
+            document.getElementById('new-log').value = '';
+            loadLogs();
         }
 
-        if(btnScanArtifact) {
-            btnScanArtifact.addEventListener('click', async () => {
-                const originalText = btnScanArtifact.innerHTML;
-                btnScanArtifact.innerHTML = '<span class="animate-pulse text-blood-bright">[...] SCANNING NEURAL ARTIFACT</span>';
-                btnScanArtifact.disabled = true;
-                aiScanResult.classList.remove('hidden');
-                aiScanText.innerText = "INITIALIZING VISUAL THREAT ASSESSMENT...";
+        loadLogs(); // Initial load
 
-                const base64Data = getBase64Image(memoryImage);
-                if (!base64Data) {
-                    aiScanText.innerText = "> SECURITY OVERRIDE (CORS). PLEASE DRAG & DROP OR SELECT THE IMAGE MANUALLY TO SCAN.";
-                    btnScanArtifact.innerHTML = originalText;
-                    btnScanArtifact.disabled = false;
-                    return;
+        // Demolition Upload
+        document.getElementById('image-upload').addEventListener('change', function(e) {
+            const gallery = document.getElementById('gallery');
+            Array.from(e.target.files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const div = document.createElement('div');
+                    div.className = 'demo-photo';
+                    const img = document.createElement('img');
+                    img.src = event.target.result;
+                    div.appendChild(img);
+                    gallery.appendChild(div);
                 }
-
-                try {
-                    const payload = {
-                        contents: [{
-                            role: "user",
-                            parts: [
-                                { text: "Analyze this image. Output a 'Visual Threat Assessment' or 'Vibe Check' in the style of a gritty, classified military document intersecting with a heavy metal underground zine. Describe the individuals, expressions, and the raw energy. Maximum 3 short sentences. Be aggressive and poetic." },
-                                { inlineData: { mimeType: "image/jpeg", data: base64Data } }
-                            ]
-                        }]
-                    };
-                    
-                    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${GEMINI_API_KEY}`;
-                    
-                    const data = await fetchWithBackoff(url, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (data && data.candidates && data.candidates[0].content.parts[0].text) {
-                        aiScanText.innerText = "> " + data.candidates[0].content.parts[0].text.trim();
-                    } else {
-                        aiScanText.innerText = "> SCAN FAILED. SIGNAL LOST IN THE NOISE.";
-                    }
-                } catch (err) {
-                    aiScanText.innerText = "> UPLINK ERROR. ARTIFACT CORRUPTED.";
-                } finally {
-                    btnScanArtifact.innerHTML = originalText;
-                    btnScanArtifact.disabled = false;
-                }
+                reader.readAsDataURL(file);
             });
-        }
+        });
 
-        // --- 3. PHOTO HANDLING & DRAG AND DROP ---
-        const memoryImage = document.getElementById('memory-image');
-<!-- ... existing code ... -->
+        // Web Audio API Oscilloscope & Drone
+        document.getElementById('start-audio').addEventListener('click', async function() {
+            this.style.display = 'none';
+            const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            
+            // Drone Oscillator
+            const osc = audioCtx.createOscillator();
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(36.71, audioCtx.currentTime); // Drop D
+            
+            // Distortion
+            const distortion = audioCtx.createWaveShaper();
+            function makeDistortionCurve(amount) {
+                var k = typeof amount === 'number' ? amount : 50,
+                    n_samples = 44100,
+                    curve = new Float32Array(n_samples),
+                    deg = Math.PI / 180,
+                    i = 0,
+                    x;
+                for ( ; i < n_samples; ++i ) {
+                    x = i * 2 / n_samples - 1;
+                    curve[i] = ( 3 + k ) * x * 20 * deg / ( Math.PI + k * Math.abs(x) );
+                }
+                return curve;
+            }
+            distortion.curve = makeDistortionCurve(400);
+            distortion.oversample = '4x';
+            
+            // Filter
+            const filter = audioCtx.createBiquadFilter();
+            filter.type = 'lowpass';
+            filter.frequency.value = 400;
+
+            // Analyzer
+            const analyser = audioCtx.createAnalyser();
+            analyser.fftSize = 2048;
+            
+            // Gain
+            const gainNode = audioCtx.createGain();
+            gainNode.gain.value = 0.1; // Keep it low!
+            
+            osc.connect(distortion);
+            distortion.connect(filter);
+            filter.connect(analyser);
+            analyser.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            
+            osc.start();
+
+            // Draw Oscilloscope
+            const canvas = document.getElementById('oscilloscope');
+            const canvasCtx = canvas.getContext('2d');
+            const bufferLength = analyser.frequencyBinCount;
+            const dataArray = new Uint8Array(bufferLength);
+            
+            function draw() {
+                requestAnimationFrame(draw);
+                analyser.getByteTimeDomainData(dataArray);
+                canvasCtx.fillStyle = '#050505';
+                canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+                canvasCtx.lineWidth = 2;
+                canvasCtx.strokeStyle = '#ff003c';
+                canvasCtx.beginPath();
+                var sliceWidth = canvas.width * 1.0 / bufferLength;
+                var x = 0;
+                for(var i = 0; i < bufferLength; i++) {
+                    var v = dataArray[i] / 128.0;
+                    var y = v * canvas.height/2;
+                    if(i === 0) { canvasCtx.moveTo(x, y); } 
+                    else { canvasCtx.lineTo(x, y); }
+                    x += sliceWidth;
+                }
+                canvasCtx.lineTo(canvas.width, canvas.height/2);
+                canvasCtx.stroke();
+            }
+            draw();
+        });
+    </script>
+</body>
+</html>
